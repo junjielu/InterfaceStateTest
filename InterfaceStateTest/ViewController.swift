@@ -11,12 +11,14 @@ import AsyncDisplayKit
 
 class ViewController: UIViewController {
     let tableNode = ASTableNode()
-    var cellCount: Int = 20
+    var cellCount: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let preloadTuningParamters = ASRangeTuningParameters(leadingBufferScreenfuls: 1.5, trailingBufferScreenfuls: 0.25)
+        self.navigationController?.navigationBar.isHidden = true
+        
+        let preloadTuningParamters = ASRangeTuningParameters(leadingBufferScreenfuls: 0.5, trailingBufferScreenfuls: 0.25)
         let displayTuningParameters = ASRangeTuningParameters(leadingBufferScreenfuls: 0.25, trailingBufferScreenfuls: 0.25)
         
         tableNode.setTuningParameters(displayTuningParameters, for: ASLayoutRangeType.display)
@@ -29,6 +31,29 @@ class ViewController: UIViewController {
         tableNode.dataSource = self
         
         self.view.addSubnode(tableNode)
+        
+        let button = UIButton()
+        button.setTitle("测试", for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        button.frame = CGRect(x: UIScreen.main.bounds.width - 60 - 15, y: UIScreen.main.bounds.height - 30 - 34 - 15, width: 60, height: 30)
+        self.view.addSubview(button)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.appendToBottom()
+        }
+    }
+    
+    @objc func didTapButton() {
+        let testVC = TestViewController()
+        self.navigationController?.pushViewController(testVC, animated: true)
+    }
+    
+    func appendToBottom() {
+        print("[LOG] append new")
+        self.cellCount = 100
+        let indexPaths = (1...99).map { IndexPath(row: $0, section: 0) }
+        self.tableNode.insertRows(at: indexPaths, with: .fade)
     }
 }
 
@@ -61,7 +86,6 @@ class TestCellNode: ASCellNode {
         self.textNode.attributedText = NSAttributedString(string: "\(index)", attributes: [NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
         self.style.height = ASDimension(unit: .points, value: UIScreen.main.bounds.height)
         self.automaticallyManagesSubnodes = true
-//        self.addSubnode(textNode)
     }
     
     override func didEnterVisibleState() {

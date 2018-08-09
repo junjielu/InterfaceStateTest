@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C04A4DE9FE52630DCADCDE4 /* Pods_InterfaceStateTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B534B553F352BE1BCE6561 /* Pods_InterfaceStateTest.framework */; };
+		D133E5F7211C0FBC0022EEA0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E5F6211C0FBC0022EEA0 /* TestViewController.swift */; };
 		D16D745721145010005184CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D745621145010005184CF /* AppDelegate.swift */; };
 		D16D745921145010005184CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D745821145010005184CF /* ViewController.swift */; };
 		D16D745C21145010005184CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16D745A21145010005184CF /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 		38B534B553F352BE1BCE6561 /* Pods_InterfaceStateTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterfaceStateTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82A968B9B9E96DE33F803974 /* Pods-InterfaceStateTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterfaceStateTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterfaceStateTest/Pods-InterfaceStateTest.release.xcconfig"; sourceTree = "<group>"; };
 		B4B4B8969E489A3F649F5C35 /* Pods-InterfaceStateTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterfaceStateTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InterfaceStateTest/Pods-InterfaceStateTest.debug.xcconfig"; sourceTree = "<group>"; };
+		D133E5F6211C0FBC0022EEA0 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		D16D745321145010005184CF /* InterfaceStateTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterfaceStateTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16D745621145010005184CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16D745821145010005184CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				D16D745D21145012005184CF /* Assets.xcassets */,
 				D16D745F21145012005184CF /* LaunchScreen.storyboard */,
 				D16D746221145012005184CF /* Info.plist */,
+				D133E5F6211C0FBC0022EEA0 /* TestViewController.swift */,
 			);
 			path = InterfaceStateTest;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D16D745921145010005184CF /* ViewController.swift in Sources */,
+				D133E5F7211C0FBC0022EEA0 /* TestViewController.swift in Sources */,
 				D16D745721145010005184CF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,7 +359,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4CSCF7378L;
 				INFOPLIST_FILE = InterfaceStateTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruguoapp.InterfaceStateTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -371,7 +378,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4CSCF7378L;
 				INFOPLIST_FILE = InterfaceStateTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruguoapp.InterfaceStateTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
